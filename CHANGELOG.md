@@ -1,4 +1,4 @@
-# bedrock-module-template-http ChangeLog
+# oauth2-client-registration-handler ChangeLog
 
 ## 1.0.0 - TBD
 

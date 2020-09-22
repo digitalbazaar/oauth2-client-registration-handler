@@ -1,15 +1,19 @@
 {
-  "name": "bedrock-module-template-http",
-  "version": "0.0.1-0",
-  "description": "Bedrock HTTP API",
+  "name": "oauth2-client-registration-handler",
+  "version": "0.0.1",
+  "description": "OAuth2 Dynamic Registration handler for custom authorization servers.",
   "main": "./lib",
-  "scripts": {},
+  "scripts": {
+    "lint": "eslint .",
+    "test": "npm run lint && npm run test-node",
+    "test-node": "cross-env NODE_ENV=test mocha --preserve-symlinks -t 10000 tests/**/*.spec.js"
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/digitalbazaar/bedrock-module-template-http"
+    "url": "https://github.com/digitalbazaar/oauth2-client-registration-handler"
   },
   "keywords": [
-    "bedrock"
+    "oauth2"
   ],
   "author": {
     "name": "Digital Bazaar, Inc.",
@@ -17,19 +21,28 @@
     "url": "https://digitalbazaar.com"
   },
   "bugs": {
-    "url": "https://github.com/digitalbazaar/bedrock-module-template-http/issues"
+    "url": "https://github.com/digitalbazaar/oauth2-client-registration-handler/issues"
   },
-  "homepage": "https://github.com/digitalbazaar/bedrock-module-template-http",
+  "homepage": "https://github.com/digitalbazaar/oauth2-client-registration-handler",
   "dependencies": {},
-  "peerDependencies": {
-    "bedrock": "^3.0.1",
-    "bedrock-express": "^3.0.0"
-  },
   "directories": {
     "lib": "./lib"
   },
   "devDependencies": {
-    "eslint": "^6.8.0",
-    "eslint-config-digitalbazaar": "^2.0.0"
+    "chai": "^4.2.0",
+    "cross-env": "^7.0.2",
+    "eslint": "^7.9.0",
+    "eslint-config-digitalbazaar": "^2.6.1",
+    "eslint-plugin-jsdoc": "^30.2.0",
+    "mocha": "^8.1.0"
+  },
+  "nyc": {
+    "exclude": [
+      "tests"
+    ],
+    "reporter": [
+      "html",
+      "text-summary"
+    ]
   }
 }
