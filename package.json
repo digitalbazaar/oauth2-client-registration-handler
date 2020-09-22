@@ -24,16 +24,22 @@
     "url": "https://github.com/digitalbazaar/oauth2-client-registration-handler/issues"
   },
   "homepage": "https://github.com/digitalbazaar/oauth2-client-registration-handler",
-  "dependencies": {},
+  "dependencies": {
+    "bnid": "^2.0.0",
+    "@interop/oauth2-errors": "^2.0.0",
+    "snake-case": "^3.0.3"
+  },
   "directories": {
     "lib": "./lib"
   },
   "devDependencies": {
     "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
     "cross-env": "^7.0.2",
     "eslint": "^7.9.0",
     "eslint-config-digitalbazaar": "^2.6.1",
     "eslint-plugin-jsdoc": "^30.2.0",
+    "express": "^4.17.1",
     "mocha": "^8.1.0"
   },
   "nyc": {

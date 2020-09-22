@@ -16,9 +16,15 @@
 
 ## Background
 
+Constraints/Limitations:
+
+* Only supporting `client_credentials` grant type for now.
+* Initial registration authentication method is bearer token.
+
 Relevant specifications:
 
 * [OAuth 2.0 Dynamic Client Registration Protocol](https://tools.ietf.org/html/rfc7591)
+* [OAuth 2.0 Dynamic Client Registration Management Protocol](https://tools.ietf.org/html/rfc7592)
 
 ## Security
 
@@ -38,7 +44,30 @@ npm install
 
 ## Usage
 
-TBD
+This library exports a route handler to perform OAuth2 Dynamic Client 
+Registration that can be added to an existing Bedrock or Express.js application.
+
+```js
+const {handleClientRegistration} = require('oauth2-client-registration-handler');
+
+app.post('/oauth2/register',
+  handleClientRegistration({
+    baseUrl: 'https://as.example.com',
+    authentication: {
+      strategy: 'bearer',
+      validateInitialAccessToken: async ({token}) => {/* custom token validation logic */}
+    },
+    register: async ({registration}) => {
+      // custom registration callback (saves client to database etc)
+    },
+    defaults: {
+      clientSecretExpiresAt: 0, // never expires
+      grantTypes: ['client_credentials'],
+      tokenEndpointAuthMethod: 'client_secret_post'
+    }
+  }))
+);
+```
 
 ## Contribute
 
