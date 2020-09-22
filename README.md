@@ -16,9 +16,15 @@
 
 ## Background
 
+Constraints/Limitations:
+
+* Only supporting `client_credentials` grant type for now.
+* Initial registration authentication method is bearer token.
+
 Relevant specifications:
 
 * [OAuth 2.0 Dynamic Client Registration Protocol](https://tools.ietf.org/html/rfc7591)
+* [OAuth 2.0 Dynamic Client Registration Management Protocol](https://tools.ietf.org/html/rfc7592)
 
 ## Security
 
