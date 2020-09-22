@@ -48,7 +48,7 @@ app.post('/oauth2/register',
   handleClientRegistration({
     authentication: {
       strategy: 'bearer',
-      validateToken: (req, res) => {/* custom token validation logic */}
+      validateInitialAccessToken: ({token}) => {/* custom token validation logic */}
     },
     getClient: clientId => {
       // custom 'load client' callback (read registered client from db)

@@ -24,7 +24,9 @@
     "url": "https://github.com/digitalbazaar/oauth2-client-registration-handler/issues"
   },
   "homepage": "https://github.com/digitalbazaar/oauth2-client-registration-handler",
-  "dependencies": {},
+  "dependencies": {
+    "snake-case": "^3.0.3"
+  },
   "directories": {
     "lib": "./lib"
   },
