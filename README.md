@@ -20,6 +20,7 @@ Constraints/Limitations:
 
 * Only supporting `client_credentials` grant type for now.
 * Initial registration authentication method is bearer token.
+* Does not support the signed Software Statement mechanism.
 
 Relevant specifications:
 
@@ -57,14 +58,15 @@ app.post('/oauth2/register',
       strategy: 'bearer',
       validateInitialAccessToken: async ({token}) => {/* custom token validation logic */}
     },
-    register: async ({registration}) => {
+    register: async ({registration, credentials: {initialAccessToken}}) => {
       // custom registration callback (saves client to database etc)
     },
     defaults: {
       clientSecretExpiresAt: 0, // never expires
       grantTypes: ['client_credentials'],
       tokenEndpointAuthMethod: 'client_secret_post'
-    }
+    },
+    logger: console
   }))
 );
 ```
