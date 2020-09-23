@@ -30,7 +30,8 @@ describe('handleClientRegistration', () => {
           }
         }
       },
-      register: async ({registration}) => {
+      // eslint-disable-next-line no-unused-vars
+      register: async ({registration, credentials: {initialAccessToken}}) => {
         // save to database, then return the saved client metadata
         return registration;
       }
@@ -80,7 +81,9 @@ describe('handleClientRegistration', () => {
   it('should return a valid registration with correct auth token', async () => {
     const res = await requester.post(registerUrl)
       .set('Authorization', `Bearer ${VALID_TOKEN}`)
-      .send({});
+      .send({
+        client_name: 'Example client.'
+      });
     expect(res).to.have.status(201);
     expect(res).to.be.json;
     expect(res.body.grant_types).to.eql(['client_credentials']);
@@ -89,5 +92,6 @@ describe('handleClientRegistration', () => {
     expect(res.body.client_id_issued_at).to.be.a('number');
     expect(res.body.client_secret_expires_at).to.equal(0);
     expect(res.body.token_endpoint_auth_method).to.equal('client_secret_post');
+    expect(res.body.client_name).to.equal('Example client.');
   });
 });
