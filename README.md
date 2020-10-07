@@ -1,4 +1,4 @@
-# Bedrock OAuth2 Dynamic Client Registration _(oauth2-client-registration-handler)_
+# Bedrock OAuth2 Dynamic Client Registration _(@digitalbazaar/oauth2-client-registration-handler)_
 
 [![Node.js CI](https://github.com/digitalbazaar/oauth2-client-registration-handler/workflows/Node.js%20CI/badge.svg)](https://github.com/digitalbazaar/oauth2-client-registration-handler/actions?query=workflow%3A%22Node.js+CI%22)
 
@@ -49,7 +49,7 @@ This library exports a route handler to perform OAuth2 Dynamic Client
 Registration that can be added to an existing Bedrock or Express.js application.
 
 ```js
-const {handleClientRegistration} = require('oauth2-client-registration-handler');
+const {handleClientRegistration} = require('@digitalbazaar/oauth2-client-registration-handler');
 
 app.post('/oauth2/register',
   handleClientRegistration({
