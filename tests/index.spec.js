@@ -11,7 +11,8 @@ const express = require('express');
 const bodyParserJson = express.json();
 
 const {
-  handleClientRegistration
+  handleClientRegistration,
+  _parseRegistration
 } = require('../lib');
 
 const registerUrl = '/oauth2/register';
@@ -96,5 +97,21 @@ describe('handleClientRegistration', () => {
     expect(res.body.client_secret_expires_at).to.equal(0);
     expect(res.body.token_endpoint_auth_method).to.equal('client_secret_post');
     expect(res.body.client_name).to.equal('Example client.');
+  });
+});
+
+describe('_parseRegistration', () => {
+  it('should throw if encounters a forbidden field', async () => {
+    let error;
+    try {
+      _parseRegistration({
+        registrationBody: {client_secret: 'some client secret'}
+      });
+    } catch(e) {
+      error = e;
+    }
+    expect(error.message).to.equal('invalid_request');
+    expect(error.error_description).to
+      .equal('Registration MUST NOT include the "client_secret" field.');
   });
 });
