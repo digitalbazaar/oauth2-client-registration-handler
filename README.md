@@ -49,10 +49,10 @@ This library exports a route handler to perform OAuth2 Dynamic Client
 Registration that can be added to an existing Bedrock or Express.js application.
 
 ```js
-const {handleClientRegistration} = require('@digitalbazaar/oauth2-client-registration-handler');
+const {clientRegistrationHandler} = require('@digitalbazaar/oauth2-client-registration-handler');
 
 app.post('/oauth2/register',
-  handleClientRegistration({
+  clientRegistrationHandler({
     baseUrl: 'https://as.example.com',
     authentication: {
       strategy: 'bearer',
