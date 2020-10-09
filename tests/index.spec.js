@@ -11,7 +11,7 @@ const express = require('express');
 const bodyParserJson = express.json();
 
 const {
-  handleClientRegistration,
+  clientRegistrationHandler,
   _parseRegistration
 } = require('../lib');
 
@@ -24,7 +24,7 @@ describe('handleClientRegistration', () => {
   app.post(
     registerUrl,
     bodyParserJson,
-    handleClientRegistration({
+    clientRegistrationHandler({
       baseUrl: 'https://as.example.com',
       authentication: {
         strategy: 'bearer',
