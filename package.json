@@ -1,6 +1,6 @@
 {
   "name": "@digitalbazaar/oauth2-client-registration-handler",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "OAuth2 Dynamic Registration handler for custom authorization servers.",
   "main": "./lib",
   "scripts": {
