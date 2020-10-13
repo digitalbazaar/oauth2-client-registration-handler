@@ -1,12 +1,11 @@
 /*!
  * Copyright (c) 2020 Digital Bazaar, Inc. All rights reserved.
  */
-'use strict';
-const chai = require('chai');
+import chai from 'chai';
+import {ClientMetadata} from '../lib';
+
 chai.should();
 const {expect} = chai;
-
-const {ClientMetadata} = require('../lib');
 
 describe('ClientMetadata', () => {
   describe('constructor', () => {
