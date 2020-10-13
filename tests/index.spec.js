@@ -1,13 +1,14 @@
 /*!
  * Copyright (c) 2020 Digital Bazaar, Inc. All rights reserved.
  */
-'use strict';
-const chai = require('chai');
-chai.use(require('chai-http'));
+import chai from 'chai';
+import chaiHttp from 'chai-http';
+import express from 'express';
+
+chai.use(chaiHttp);
 chai.should();
 const {expect} = chai;
 
-const express = require('express');
 const bodyParserJson = express.json();
 
 const {
@@ -70,7 +71,6 @@ describe('handleClientRegistration', () => {
     expect(res.body.error).to.equal('invalid_request');
     expect(res.body.error_description)
       .to.equal('Invalid authorization scheme.');
-
   });
 
   it('should error if given an invalid token', async () => {
