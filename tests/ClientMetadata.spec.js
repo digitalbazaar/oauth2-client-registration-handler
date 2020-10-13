@@ -6,7 +6,7 @@ const chai = require('chai');
 chai.should();
 const {expect} = chai;
 
-const {ClientMetadata} = require('../lib/ClientMetadata');
+const {ClientMetadata} = require('../lib');
 
 describe('ClientMetadata', () => {
   describe('constructor', () => {
