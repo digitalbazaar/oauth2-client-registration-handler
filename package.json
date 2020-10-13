@@ -28,6 +28,7 @@
     "@interop/oauth2-errors": "^2.0.0",
     "auth-header": "^1.0.0",
     "bnid": "^2.0.0",
+    "esm": "^3.2.25",
     "snake-case": "^3.0.3"
   },
   "directories": {
