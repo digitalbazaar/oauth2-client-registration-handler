@@ -33,7 +33,7 @@ TBD
 
 ## Install
 
-- Node.js 12+ is required.
+- Node.js >= 16 is required.
 
 To install locally (for development):
 
@@ -45,11 +45,11 @@ npm install
 
 ## Usage
 
-This library exports a route handler to perform OAuth2 Dynamic Client 
+This library exports a route handler to perform OAuth2 Dynamic Client
 Registration that can be added to an existing Bedrock or Express.js application.
 
 ```js
-const {clientRegistrationHandler} = require('@digitalbazaar/oauth2-client-registration-handler');
+import {clientRegistrationHandler} from '@digitalbazaar/oauth2-client-registration-handler';
 
 app.post('/oauth2/register',
   clientRegistrationHandler({
