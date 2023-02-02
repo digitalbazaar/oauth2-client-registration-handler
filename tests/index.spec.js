@@ -1,6 +1,7 @@
 /*!
- * Copyright (c) 2020 Digital Bazaar, Inc. All rights reserved.
+ * Copyright (c) 2020-2023 Digital Bazaar, Inc. All rights reserved.
  */
+import {_parseRegistration, clientRegistrationHandler} from '../lib/index.js';
 import chai from 'chai';
 import chaiHttp from 'chai-http';
 import express from 'express';
@@ -10,11 +11,6 @@ chai.should();
 const {expect} = chai;
 
 const bodyParserJson = express.json();
-
-const {
-  clientRegistrationHandler,
-  _parseRegistration
-} = require('../lib');
 
 const registerUrl = '/oauth2/register';
 const VALID_TOKEN = 'abcd1234';

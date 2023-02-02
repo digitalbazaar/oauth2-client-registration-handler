@@ -2,11 +2,12 @@
   "name": "@digitalbazaar/oauth2-client-registration-handler",
   "version": "1.0.0",
   "description": "OAuth2 Dynamic Registration handler for custom authorization servers.",
-  "main": "./lib",
+  "type": "module",
+  "main": "./lib/index.js",
   "scripts": {
     "lint": "eslint .",
     "test": "npm run lint && npm run test-node",
-    "test-node": "cross-env NODE_ENV=test mocha -r esm --preserve-symlinks -t 10000 tests/**/*.spec.js"
+    "test-node": "cross-env NODE_ENV=test mocha --preserve-symlinks -t 10000 tests/**/*.spec.js"
   },
   "repository": {
     "type": "git",
@@ -25,24 +26,23 @@
   },
   "homepage": "https://github.com/digitalbazaar/oauth2-client-registration-handler",
   "dependencies": {
-    "@interop/oauth2-errors": "^2.0.0",
+    "@interop/oauth2-errors": "^2.1.0",
     "auth-header": "^1.0.0",
-    "bnid": "^2.0.0",
-    "esm": "^3.2.25",
-    "snake-case": "^3.0.3"
+    "bnid": "^3.0.0",
+    "snake-case": "^3.0.4"
   },
   "directories": {
-    "lib": "./lib"
+    "lib": "./lib/**/*.js"
   },
   "devDependencies": {
-    "chai": "^4.2.0",
+    "chai": "^4.3.7",
     "chai-http": "^4.3.0",
-    "cross-env": "^7.0.2",
-    "eslint": "^7.9.0",
-    "eslint-config-digitalbazaar": "^2.6.1",
-    "eslint-plugin-jsdoc": "^30.2.0",
-    "express": "^4.17.1",
-    "mocha": "^8.1.0"
+    "cross-env": "^7.0.3",
+    "eslint": "^8.33.0",
+    "eslint-config-digitalbazaar": "^4.2.0",
+    "eslint-plugin-jsdoc": "^39.7.5",
+    "express": "^4.18.2",
+    "mocha": "^10.2.0"
   },
   "nyc": {
     "exclude": [
