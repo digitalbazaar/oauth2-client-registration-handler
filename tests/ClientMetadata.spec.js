@@ -1,8 +1,8 @@
 /*!
- * Copyright (c) 2020 Digital Bazaar, Inc. All rights reserved.
+ * Copyright (c) 2020-2023 Digital Bazaar, Inc. All rights reserved.
  */
 import chai from 'chai';
-import {ClientMetadata} from '../lib';
+import {ClientMetadata} from '../lib/index.js';
 
 chai.should();
 const {expect} = chai;
