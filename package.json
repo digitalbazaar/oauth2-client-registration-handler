@@ -12,6 +12,9 @@
     "coverage-ci": "cross-env NODE_ENV=test c8 --reporter=lcovonly npm run test-node",
     "coverage-report": "c8 report"
   },
+  "files": [
+    "lib/**/*.js"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/digitalbazaar/oauth2-client-registration-handler"
